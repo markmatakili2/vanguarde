@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -15,10 +17,86 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Playfair Display', serif;
     line-height: 1.6;
     color: var(--text-dark);
     background: #ffffff;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.loader-logo svg {
+    width: 100%;
+    height: 100%;
+    color: var(--primary);
+}
+
+.loader-text {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 20px auto 0;
+    overflow: hidden;
+}
+
+.loader-progress {
+    height: 100%;
+    background: var(--primary);
+    width: 0;
+    animation: loading 2s ease-in-out forwards;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 .container {
@@ -142,13 +220,14 @@ nav a.active {
 
 .btn-primary {
     background: var(--primary);
-    color: white;
+    color: var(--secondary);
 }
 
 .btn-primary:hover {
     background: var(--hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+    color: var(--secondary);
 }
 
 .btn-secondary {
@@ -188,14 +267,33 @@ nav a.active {
     overflow: hidden;
 }
 
-.hero-bg {
+.hero-slider {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     z-index: -2;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero::before {
@@ -212,18 +310,36 @@ nav a.active {
 .hero-content {
     max-width: 800px;
     padding: 40px 20px;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 800;
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin-bottom: 30px;
     opacity: 0.95;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero .btn {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 section {
@@ -262,12 +378,20 @@ section {
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 30px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 32px rgba(46, 204, 113, 0.15);
+    border-color: var(--primary);
 }
 
 .card-icon {

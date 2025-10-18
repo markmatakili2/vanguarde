@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+            </div>
+            <div class="loader-text">Vanguard Rise Limited</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -50,7 +66,11 @@
 
     <main>
         <section class="hero">
-            <img src="" alt="Project management hero" class="hero-bg">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <img src="images/project.jpg" alt="Project management services">
+                </div>
+            </div>
             <div class="hero-content">
                 <h1>Project Management</h1>
                 <p>Delivering excellence from planning to completion</p>
@@ -63,12 +83,12 @@
                 <p class="section-subtitle">Strategic planning and execution for successful project delivery</p>
                 <div class="grid grid-2">
                     <div class="card">
-                        <img src="" alt="Planning">
+                        <img src="images/project.jpg" alt="Planning">
                         <h3>Strategic Planning</h3>
                         <p>Comprehensive planning and analysis to ensure project success from the start</p>
                     </div>
                     <div class="card">
-                        <img src="" alt="Execution">
+                        <img src="images/img3.jpeg" alt="Execution">
                         <h3>Expert Execution</h3>
                         <p>Professional oversight and management throughout the project lifecycle</p>
                     </div>
@@ -150,12 +170,12 @@
                 <h2 class="section-title">Why Choose Our Project Management Services</h2>
                 <div class="grid grid-2">
                     <div class="card">
-                        <img src="" alt="Experience">
+                        <img src="images/img1.jpeg" alt="Experience">
                         <h3>Proven Experience</h3>
                         <p>Years of expertise managing diverse projects across multiple sectors</p>
                     </div>
                     <div class="card">
-                        <img src="" alt="Results">
+                        <img src="images/img2.jpeg" alt="Results">
                         <h3>Deliver Results</h3>
                         <p>Track record of successful project delivery within time and budget</p>
                     </div>
