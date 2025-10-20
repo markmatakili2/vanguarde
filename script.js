@@ -125,6 +125,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const donateTriggers = document.querySelectorAll('.donate-trigger');
+    donateTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            if (paymentModal) {
+                paymentModal.classList.add('show');
+            }
+        });
+    });
+
     if (closeModal) {
         closeModal.addEventListener('click', function() {
             paymentModal.classList.remove('show');

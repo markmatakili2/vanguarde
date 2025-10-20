@@ -6,6 +6,7 @@
     <title>Philanthropy - Vanguard Rise Limited</title>
     <meta name="description" content="Making a difference through philanthropy">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="loader">
@@ -79,20 +80,10 @@
 
         <section>
             <div class="container">
-                <h2 class="section-title">Our Mission</h2>
-                <p class="section-subtitle">Committed to making a difference through strategic giving</p>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <img src="images/give.png" alt="Community development">
-                        <h3>Community Development</h3>
-                        <p>Supporting initiatives that promote sustainable community growth and development</p>
-                    </div>
-                    <div class="card">
-                        <img src="images/donate.png" alt="Education support">
-                        <h3>Education Support</h3>
-                        <p>Investing in education to empower future generations</p>
-                    </div>
-                </div>
+                <h2 class="section-title">Our Philanthropic Mission</h2>
+                <p class="section-subtitle" style="max-width: 900px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.8;">
+                    At Vanguard Rise Limited, philanthropy is not just an add-on to our business—it's at the heart of who we are. We are passionately dedicated to supporting communities through strategic charitable activities that create lasting, meaningful impact. Our commitment goes beyond financial contributions; we invest our time, expertise, and resources to address critical needs in education, healthcare, infrastructure, and environmental conservation. Through collaborative partnerships with communities, NGOs, and stakeholders, we champion initiatives that uplift lives, strengthen social bonds, and nurture sustainable development across Africa. Because we believe that true prosperity is only achieved when it's shared.
+                </p>
             </div>
         </section>
 
@@ -165,28 +156,84 @@
 
         <section>
             <div class="container">
+                <h2 class="section-title">Ongoing Programmes</h2>
+                <p class="section-subtitle">Making a difference through targeted initiatives</p>
+                <div class="grid grid-2">
+                    <div class="program-card">
+                        <img src="images/give.png" alt="Save a Child Program" class="program-image">
+                        <div class="program-content">
+                            <h3>Save a Child Program</h3>
+                            <p>Our flagship initiative dedicated to transforming the lives of vulnerable children across East Africa. The Save a Child Program provides comprehensive support including educational scholarships, nutritional assistance, healthcare access, and psychosocial support for orphaned and underprivileged children. We work directly with families and communities to ensure children have safe environments to grow, learn, and thrive.</p>
+                            <p>Through this program, we've already impacted over 500 children, providing them with school supplies, uniforms, and tuition fees, while also supporting their caregivers with income-generating activities. Our holistic approach ensures that every child receives not just immediate assistance, but long-term pathways to a brighter future.</p>
+                            <div class="program-actions">
+                                <a href="#" class="btn btn-outline">Gallery</a>
+                                <a href="#" class="btn btn-secondary">Read More</a>
+                                <button class="btn btn-primary donate-trigger">Support</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="images/donate.png" alt="Community Health Initiative" class="program-image">
+                        <div class="program-content">
+                            <h3>Community Health Initiative</h3>
+                            <p>Addressing healthcare gaps in underserved rural communities through mobile health clinics, health education workshops, and partnerships with local healthcare providers. This program focuses on preventive care, maternal health, child immunization, and management of chronic diseases.</p>
+                            <p>We've organized health camps reaching over 2,000 community members, providing free medical consultations, basic medications, and health screenings. Our health education sessions empower communities with knowledge about hygiene, nutrition, and disease prevention, creating sustainable health improvements.</p>
+                            <div class="program-actions">
+                                <a href="#" class="btn btn-outline">Gallery</a>
+                                <a href="#" class="btn btn-secondary">Read More</a>
+                                <button class="btn btn-primary donate-trigger">Support</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="images/logo-philanthropy.jpg" alt="Women Empowerment Project" class="program-image">
+                        <div class="program-content">
+                            <h3>Women Empowerment Project</h3>
+                            <p>Empowering women through skills training, microfinance support, and business mentorship. This initiative helps women establish sustainable income sources, gain financial independence, and become leaders in their communities. Training areas include tailoring, agriculture, small business management, and digital literacy.</p>
+                            <p>We've trained over 300 women in various vocational skills and provided startup capital to 150 women-led enterprises. Our mentorship program connects participants with successful entrepreneurs, creating networks of support that extend far beyond initial training.</p>
+                            <div class="program-actions">
+                                <a href="#" class="btn btn-outline">Gallery</a>
+                                <a href="#" class="btn btn-secondary">Read More</a>
+                                <button class="btn btn-primary donate-trigger">Support</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <img src="images/img3.jpeg" alt="Environmental Conservation" class="program-image">
+                        <div class="program-content">
+                            <h3>Environmental Conservation Initiative</h3>
+                            <p>Protecting our environment for future generations through tree planting drives, waste management programs, and environmental education. We partner with schools and community groups to plant indigenous trees, establish community forests, and promote sustainable environmental practices.</p>
+                            <p>To date, we've planted over 10,000 trees and engaged 50+ schools in environmental clubs. Our waste management initiatives have helped establish recycling programs in 15 communities, reducing environmental pollution while creating green jobs.</p>
+                            <div class="program-actions">
+                                <a href="#" class="btn btn-outline">Gallery</a>
+                                <a href="#" class="btn btn-secondary">Read More</a>
+                                <button class="btn btn-primary donate-trigger">Support</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #f8f9fa;">
+            <div class="container">
                 <h2 class="section-title">Support Our Cause</h2>
-                <p class="section-subtitle">Your contribution makes a real difference</p>
-                <div style="text-align: center; padding: 40px 0;">
-                    <button id="donate-btn" class="btn btn-primary" style="font-size: 1.2rem; padding: 16px 40px;">Donate Now</button>
+                <p class="section-subtitle">Your contribution makes a real difference in transforming lives</p>
+                <div class="btn-group" style="margin: 30px 0;">
+                    <button id="donate-btn" class="btn btn-primary btn-large">Donate Now</button>
+                    <a href="https://chat.whatsapp.com/your-channel-link" target="_blank" class="btn btn-secondary btn-large">Join Our Community</a>
                 </div>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <img src="images/give.png" alt="Impact story 1">
-                        <h3>Community Impact</h3>
-                        <p>See how your donations are transforming communities</p>
-                    </div>
-                    <div class="card">
-                        <img src="images/donate.png" alt="Impact story 2">
-                        <h3>Success Stories</h3>
-                        <p>Real stories of lives changed through your generosity</p>
-                    </div>
-                    <div class="card">
-                        <img src="images/img3.jpeg" alt="Impact story 3">
-                        <h3>Transparency</h3>
-                        <p>Regular updates on how funds are being utilized</p>
-                    </div>
-                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title">Stay Connected</h2>
+                <p class="section-subtitle">Subscribe to our newsletter for updates on our programs and impact stories</p>
+                <form class="newsletter-form" style="max-width: 600px; margin: 30px auto;">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
             </div>
         </section>
     </main>
@@ -199,30 +246,21 @@
             </div>
             <div class="payment-options">
                 <div class="payment-option" data-payment="mastercard">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                        <line x1="1" y1="10" x2="23" y2="10"></line>
-                    </svg>
+                    <img src="images/mastercard.png" alt="Mastercard">
                     <div>
                         <h3>Mastercard</h3>
                         <p>Pay securely with your card</p>
                     </div>
                 </div>
                 <div class="payment-option" data-payment="paypal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="12" y1="1" x2="12" y2="23"></line>
-                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                    </svg>
+                    <img src="images/paypal.png" alt="PayPal">
                     <div>
                         <h3>PayPal</h3>
                         <p>Quick payment via PayPal</p>
                     </div>
                 </div>
                 <div class="payment-option" data-payment="mpesa">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                    </svg>
+                    <img src="images/mpesa.png" alt="M-Pesa">
                     <div>
                         <h3>M-Pesa</h3>
                         <p>Mobile money payment</p>
@@ -295,7 +333,25 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Vanguard Rise Limited</h3>
+                    <h5><i>Building Prosperity, Touching Lives</i></h5><br>
                     <p>Professional consultancy services in real estate, project management, and investment</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/174WyZmWjL/" target="_blank" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sylviaachie?igsh=YzljYTk1ODg3Zg==" target="_blank" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -312,8 +368,9 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>Email: info@vanguardrise.com</p>
-                    <p>Phone: +254 XXX XXX XXX</p>
+                    <p>Email: vanguardriselimited@gmail.com</p>
+                    <p>Phone: 0795 472 495 | 0738 589 475 | 0757 063 001</p>
+                    <p>Address: Bamburi Mtambo Rd, 4th Avenue, Next to Arawa Hospital, Mombasa, Kenya</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -321,6 +378,10 @@
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/254795472495?text=Hello%20Vanguard%20Rise%20Limited!%20I%20would%20like%20to%20know%20more%20about%20your%20services." class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
