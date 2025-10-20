@@ -673,4 +673,431 @@ footer {
     .grid-3 {
         grid-template-columns: 1fr;
     }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 90px;
+        right: 20px;
+        font-size: 24px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+/* ===================================
+   STATISTICS/COUNTER SECTION
+   =================================== */
+.stats-section {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    color: white;
+    padding: 80px 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    border-radius: 16px;
+    color: white;
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-link:hover {
+    color: var(--hover);
+    transform: translateX(5px);
+}
+
+.service-card {
+    min-height: 320px;
+}
+
+.btn-lg {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+}
+
+.contact-card {
+    text-align: center;
+}
+
+.hero-motto {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* ===================================
+   WELCOME SECTION
+   =================================== */
+.welcome-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.welcome-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ===================================
+   SERVICE CARDS WITH LINKS
+   =================================== */
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.service-card-link:hover .card {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(46, 204, 113, 0.2);
+}
+
+.read-more-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.read-more-link:hover {
+    color: var(--hover);
+    transform: translateX(5px);
+}
+
+/* ===================================
+   NEWSLETTER SECTION
+   =================================== */
+.newsletter-section {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(46, 204, 113, 0.85));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 15px 30px;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+/* ===================================
+   SOCIAL LINKS
+   =================================== */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 50%;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ===================================
+   TESTIMONIALS SECTION
+   =================================== */
+.testimonials-section {
+    background: #f8f9fa;
+    padding: 80px 20px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-quote {
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin-bottom: 5px;
+    color: var(--secondary);
+}
+
+.author-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ===================================
+   PORTFOLIO/PROJECTS GALLERY
+   =================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+/* ===================================
+   PROGRAMS SECTION (PHILANTHROPY)
+   =================================== */
+.program-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(46, 204, 113, 0.15);
+}
+
+.program-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.program-content {
+    padding: 25px;
+}
+
+.program-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.program-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--secondary);
+}
+
+/* ===================================
+   PAYMENT OPTION IMAGES
+   =================================== */
+.payment-option img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* ===================================
+   QUOTE REQUEST BUTTON
+   =================================== */
+.quote-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--bg-light);
+}
+
+.quote-section h2 {
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.quote-section p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* ===================================
+   GRID VARIATIONS
+   =================================== */
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ===================================
+   BUTTONS VARIATIONS
+   =================================== */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 1.1rem;
 }
