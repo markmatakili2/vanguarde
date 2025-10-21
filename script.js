@@ -39,6 +39,55 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
+    const statItems = document.querySelectorAll('.stat-item');
+    statItems.forEach(item => {
+        observer.observe(item);
+    });
+
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                element.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target + '+';
+            }
+        };
+
+        updateCounter();
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const numberElement = entry.target.querySelector('.stat-number');
+                if (numberElement && numberElement.textContent === '0') {
+                    animateCounter(numberElement);
+                }
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-item').forEach(item => {
+        counterObserver.observe(item);
+    });
+
+    const newsletterForms = document.querySelectorAll('.newsletter-form');
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert(`Thank you for subscribing with ${email}! We'll keep you updated.`);
+            this.reset();
+        });
+    });
+
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav');
     const dropdownToggle = document.querySelector('.dropdown-toggle');
@@ -75,6 +124,15 @@ document.addEventListener('DOMContentLoaded', function() {
             paymentModal.classList.add('show');
         });
     }
+
+    const donateTriggers = document.querySelectorAll('.donate-trigger');
+    donateTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            if (paymentModal) {
+                paymentModal.classList.add('show');
+            }
+        });
+    });
 
     if (closeModal) {
         closeModal.addEventListener('click', function() {
