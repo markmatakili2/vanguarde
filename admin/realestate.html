@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Vanguard Rise</h2>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="successstories.html">
+                    <i class="fas fa-star"></i> Success Stories
+                </a>
+                <a href="investments.html">
+                    <i class="fas fa-chart-pie"></i> Investments
+                </a>
+                <a href="realestate.html" class="active">
+                    <i class="fas fa-building"></i> Real Estate
+                </a>
+                <a href="phillanthropy.html">
+                    <i class="fas fa-heart"></i> Philanthropy
+                </a>
+            </nav>
+            <div class="sidebar-logout">
+                <a href="../index.html">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <div class="topbar">
+                <h1 class="topbar-title">Featured Properties</h1>
+                <div class="topbar-right">
+                    <div class="profile-icon" title="Admin Profile">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <p class="intro-text">
+                    Showcase premium real estate properties available for sale or investment. Manage listings for residential, commercial, and land development projects. Update property details, pricing, and availability status to keep listings current and attractive to potential buyers.
+                </p>
+
+                <div class="section-header">
+                    <h3>Property Listings</h3>
+                    <button class="btn btn-primary" onclick="openModal('addPropertyModal')">
+                        <i class="fas fa-plus"></i> Add New
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Property Name</th>
+                                <th>Photo</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Riverside Residences</td>
+                                <td>
+                                    <div class="table-photo-placeholder">🏠</div>
+                                </td>
+                                <td>Luxury 4-bedroom apartment with modern amenities...</td>
+                                <td>Residential</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <div class="action-menu">
+                                            <button class="action-btn">⋯</button>
+                                            <div class="dropdown">
+                                                <a href="#" class="btn-edit" onclick="openModal('addPropertyModal'); return false;">Edit</a>
+                                                <a href="#" class="btn-delete">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Business Plaza</td>
+                                <td>
+                                    <div class="table-photo-placeholder">🏢</div>
+                                </td>
+                                <td>Premium office space in central business district...</td>
+                                <td>Commercial</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <div class="action-menu">
+                                            <button class="action-btn">⋯</button>
+                                            <div class="dropdown">
+                                                <a href="#" class="btn-edit" onclick="openModal('addPropertyModal'); return false;">Edit</a>
+                                                <a href="#" class="btn-delete">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Development Land</td>
+                                <td>
+                                    <div class="table-photo-placeholder">🏗️</div>
+                                </td>
+                                <td>Prime land parcel for future development projects...</td>
+                                <td>Land</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <div class="action-menu">
+                                            <button class="action-btn">⋯</button>
+                                            <div class="dropdown">
+                                                <a href="#" class="btn-edit" onclick="openModal('addPropertyModal'); return false;">Edit</a>
+                                                <a href="#" class="btn-delete">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addPropertyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Property</h2>
+                <button class="close-modal" onclick="closeModal('addPropertyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="propName">Property Name</label>
+                        <input type="text" id="propName" name="name" placeholder="Enter property name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="propPhoto">Photo (Optional)</label>
+                        <input type="url" id="propPhoto" name="photo" placeholder="Enter photo URL">
+                        <small>Leave blank for default icon</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="propDescription">Description</label>
+                        <textarea id="propDescription" name="content" placeholder="Describe the property..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="propType">Property Type</label>
+                        <select id="propType" name="type" required>
+                            <option value="">Select type</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Land">Land</option>
+                            <option value="Mixed-use">Mixed-use</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-cancel" onclick="closeModal('addPropertyModal')">Cancel</button>
+                        <button type="submit" class="btn btn-submit">Add Property</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+    <script>
+        setActiveMenu('a[href="realestate.html"]');
+    </script>
+</body>
+</html>
