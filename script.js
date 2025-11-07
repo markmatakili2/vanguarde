@@ -238,4 +238,99 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
+
+    // Stripe Payment Handler
+    let stripe, elements, cardElement;
+
+    function initializeStripe() {
+        if (window.location.pathname.includes('phillanthropy.html')) {
+            const stripePublishableKey = 'pk_live_51234567890123456789'; // Replace with actual key
+            stripe = Stripe(stripePublishableKey);
+            elements = stripe.elements();
+            cardElement = elements.create('card');
+        }
+    }
+
+    const stripeForm = document.getElementById('stripe-form');
+    if (stripeForm) {
+        stripeForm.addEventListener('shown', initializeStripe);
+
+        const stripeSubmitBtn = document.getElementById('stripe-submit');
+        if (stripeSubmitBtn) {
+            stripeSubmitBtn.addEventListener('click', async function(e) {
+                e.preventDefault();
+
+                const amount = parseFloat(document.getElementById('stripe-amount').value);
+                const email = document.getElementById('stripe-email').value;
+                const name = document.getElementById('stripe-name').value;
+
+                if (!amount || !email || !name) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+
+                stripeSubmitBtn.disabled = true;
+                stripeSubmitBtn.textContent = 'Processing...';
+
+                try {
+                    const supabaseUrl = 'https://lnvbrimljganqdhfdotl.supabase.co';
+                    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxudmJyaW1samdhbnFkaGZkb3RsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA5OTgwNzYsImV4cCI6MjA3NjU3NDA3Nn0.m2eIgVh0ZqJbmw18tSpjYWPgkbfnu3UV3RbAlSi_vTo';
+                    const apiUrl = `${supabaseUrl}/functions/v1/create-payment-intent`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${supabaseKey}`,
+                        },
+                        body: JSON.stringify({
+                            amount: Math.round(amount * 100),
+                            currency: 'usd',
+                            donorName: name,
+                            donorEmail: email,
+                        }),
+                    });
+
+                    const { clientSecret, error } = await response.json();
+
+                    if (error) {
+                        alert(`Payment error: ${error}`);
+                        stripeSubmitBtn.disabled = false;
+                        stripeSubmitBtn.textContent = 'Donate via Stripe';
+                        return;
+                    }
+
+                    // Mount card element for payment
+                    if (cardElement) {
+                        cardElement.mount('#card-element');
+                    }
+
+                    // Confirm payment with Stripe
+                    const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
+                        payment_method: {
+                            card: cardElement,
+                            billing_details: {
+                                name: name,
+                                email: email
+                            }
+                        }
+                    });
+
+                    if (confirmError) {
+                        alert(`Payment failed: ${confirmError.message}`);
+                    } else if (paymentIntent.status === 'succeeded') {
+                        alert(`✅ Thank you for your donation!\n\nTransaction ID: ${paymentIntent.id}\n\nYour support means the world to us.`);
+                        paymentModal.classList.remove('show');
+                        resetPaymentModal();
+                    }
+                } catch (error) {
+                    console.error('Stripe error:', error);
+                    alert('Payment processing failed. Please try again.');
+                } finally {
+                    stripeSubmitBtn.disabled = false;
+                    stripeSubmitBtn.textContent = 'Donate via Stripe';
+                }
+            });
+        }
+    }
 });

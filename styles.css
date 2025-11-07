@@ -692,6 +692,19 @@ footer {
     background: #d0d0d0;
 }
 
+.stripe-card-element {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    background: white;
+    min-height: 40px;
+}
+
+.stripe-card-element.StripeElement--focus {
+    border-color: var(--primary);
+}
+
 /* ===================================
    FLOATING WHATSAPP BUTTON
    =================================== */

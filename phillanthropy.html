@@ -8,6 +8,7 @@
     <meta name="description" content="Making a difference through philanthropy">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
 <body>
@@ -287,6 +288,13 @@
                         <p>Mobile money payment</p>
                     </div>
                 </div>
+                <div class="payment-option" data-payment="stripe">
+                    <img src="images/stripe-logo.svg" alt="Stripe" style="height: 40px;">
+                    <div>
+                        <h3>Stripe</h3>
+                        <p>Secure global payment</p>
+                    </div>
+                </div>
             </div>
 
             <form id="mastercard-form" class="payment-form">
@@ -345,6 +353,26 @@
                 </div>
                 <button type="button" class="btn back-btn">Back</button>
                 <button type="button" id="mpesa-submit" class="btn btn-primary">Send STK Push</button>
+            </form>
+
+            <form id="stripe-form" class="payment-form">
+                <h3>Stripe Payment</h3>
+                <div class="form-group">
+                    <label for="stripe-amount">Donation Amount ($)</label>
+                    <input type="number" id="stripe-amount" min="1" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="stripe-email">Email Address</label>
+                    <input type="email" id="stripe-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="stripe-name">Full Name</label>
+                    <input type="text" id="stripe-name" required>
+                </div>
+                <div id="card-element" class="stripe-card-element"></div>
+                <div id="card-errors" style="color: #e74c3c; margin-top: 10px;"></div>
+                <button type="button" class="btn back-btn">Back</button>
+                <button type="button" id="stripe-submit" class="btn btn-primary">Donate via Stripe</button>
             </form>
         </div>
     </div>
